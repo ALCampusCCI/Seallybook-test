@@ -1,0 +1,64 @@
+/* Conteneur des cartes pour aligner les éléments horizontalement */
+.meme-container {
+    display: flex; /* Active le mode flexbox */
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    justify-content: flex-start; /* Aligne les éléments au début de la ligne */
+    gap: 20px; /* Espacement entre les cartes */
+  }
+  
+  /* Style global pour les cartes */
+  .meme-card {
+    width: 250px; /* Largeur de la carte */
+    padding: 20px; /* Espacement interne */
+    background-color: #f9f9f9; /* Fond de la carte */
+    border-radius: 8px; /* Bordures arrondies */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
+    flex-shrink: 0; /* Empêche les cartes de rétrécir */
+  }
+  
+  .meme-card:hover {
+    transform: translateY(-10px); /* Déplacement de la carte vers le haut */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+  }
+  
+  /* Style pour l'image */
+  .meme-card img {
+    width: 100%; /* L'image occupe toute la largeur de la carte */
+    height: 180px; /* Hauteur fixe de l'image */
+    object-fit: cover; /* Permet à l'image de couvrir sans déformer */
+    border-radius: 6px; /* Bordures arrondies pour l'image */
+  }
+  
+  /* Titre de la carte */
+  .meme-card h3 {
+    font-size: 1.2rem; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centrage du texte */
+    margin: 10px 0; /* Marge au-dessus et en-dessous du titre */
+  }
+  
+  /* Style pour le bouton */
+  .meme-card button {
+    background-color: #ff6f61; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Suppression de la bordure */
+    padding: 10px; /* Espacement interne */
+    width: 100%; /* Largeur à 100% pour un bouton centré */
+    border-radius: 4px; /* Bordures arrondies */
+    cursor: pointer; /* Curseur pointeur sur le bouton */
+    font-size: 1rem; /* Taille du texte */
+    transition: background-color 0.3s ease; /* Transition pour la couleur du bouton */
+  }
+  
+  .meme-card button:hover {
+    background-color: #e85a47; /* Changement de couleur au survol */
+  }
+  
+  /* Style pour le message de like */
+  .meme-card p {
+    font-size: 0.9rem; /* Taille du texte */
+    color: #777; /* Couleur plus claire pour le texte */
+    text-align: center; /* Centrer le texte */
+  }
+  
