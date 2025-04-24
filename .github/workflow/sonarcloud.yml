@@ -1,0 +1,38 @@
+name: SonarCloud
+
+on:
+  push:
+    branches:
+      - main  # Remplace par ta branche principale (par exemple, master)
+  pull_request:
+    branches:
+      - main  # Remplace également ici par ta branche principale
+
+jobs:
+  sonarcloud:
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Ajuste en fonction de ta version Node.js
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run SonarCloud analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          npm install -g sonar-scanner
+          sonar-scanner \
+            -Dsonar.projectKey=test-firebase_seallybook \
+            -Dsonar.organization=test-firebase \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=60611689e71f5a8631c2d15f5773d725bed94856
